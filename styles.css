@@ -1,0 +1,102 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+.container {
+	width: 100%;
+	height: 100vh;
+	display: felx;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Roboto', sans-serif;
+}
+
+.form {
+	background-color: #eee;
+	display: flex;
+	width: 400px;
+	height: 650px;
+	padding: 2em;
+	margin: 0 auto;
+	overflow: hidden;
+	position: relative;
+	perspective: 2000px;
+    perspective-origin: center -100px;
+}
+
+.step {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	min-width: 400px;
+	height: 650px;
+	transform: translateX(100%) translateZ(-200px) rotateY(90deg);
+	transition: transform 400ms linear;
+	transform-style: preserve-3d;
+}
+.step.active {
+	transform: translateX(0);
+}
+
+.step.passed {
+	transform: translateX(-100%) translateZ(-200px) rotateY(-90deg);
+}
+
+.inputs-block {
+	display: flex;
+	flex-direction: column;
+	padding: 1em;
+}
+
+.input-label {
+	display: flex;
+	flex-direction: column;
+	font-size: 0.8em;
+	margin: 1em 0;
+	color: #777;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+	margin: 0.3em 0;
+	padding: 1em;
+	border: none;
+	border-radius: 2px;
+	}
+
+.nav-button,
+.submit-button {
+	width: 160px;
+	letter-spacing: 0.25em;
+	text-transform: uppercase;
+	border: none;
+	padding: 1.2em 2em;
+	border-radius: 1.5em;
+	box-shadow: 6px 6px 6px 0px rgba(0,0,0,0.4), -6px -6px 6px 0px rgba(255,255,255,0.6), inset 0px 0px 0px 0px rgba(0,0,0,0.5), -0px -0px 0px 0px rgba(255,255,255,0.5);
+	transition: all 100ms ease-in;
+}
+
+.submit-button {
+	background-color: #d0efd0;
+	margin: 0 auto;
+	align-self: center;
+}
+
+.nav-button:focus,
+.submit-button:focus {
+	outline: none;
+}
+
+.nav-button:active,
+.submit-button:active {
+	box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.5), -2px -2px 2px 0px rgba(255,255,255,0.5), inset 2px 2px 3px 0px rgba(0,0,0,0.5), -2px -2px 3px 0px rgba(255,255,255,0.5);
+}
+
+.navigation {
+	width: 100%;
+	margin: 1em 0;
+	display: flex;
+	justify-content: space-around;
+}
